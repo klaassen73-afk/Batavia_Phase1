@@ -68,27 +68,6 @@
   }
   @media (max-width: 560px) { .shots { padding-right: 0; } .phone { display: none; } }
 
-  /* morph */
-  .morphs { display: grid; grid-template-columns: 1fr 1fr; gap: var(--g); padding: 32px 0 56px; }
-  .morphs figure { margin: 0; }
-  .morphs video { width: 100%; aspect-ratio: 4/3; object-fit: cover; background: var(--white); border: 1px solid var(--rule); }
-  .morphs figcaption { display: flex; justify-content: space-between; gap: 12px; padding-top: 10px; font-size: 14px; }
-  .morphs figcaption span { color: var(--ink-60); }
-  .morphs a { font-weight: 600; text-underline-offset: 3px; }
-  .story { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--rule); }
-  .story div { padding: 14px 16px 0 0; font-size: 14px; }
-  .story b { display: block; font-size: 13px; color: var(--red); margin-bottom: 2px; }
-  @media (max-width: 760px) { .morphs { grid-template-columns: 1fr; } .story { grid-template-columns: 1fr 1fr; gap: 0 16px; } }
-
-  /* waiting on */
-  .waiting { display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--g); padding: 8px 0 64px; }
-  .waiting ol { margin: 0; padding: 0; list-style: none; counter-reset: w; }
-  .waiting li { counter-increment: w; display: grid; grid-template-columns: 34px 1fr auto; gap: 8px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
-  .waiting li::before { content: counter(w, decimal-leading-zero); color: var(--ink-60); font-size: 13px; padding-top: 2px; }
-  .waiting li small { color: var(--ink-60); font-size: 13px; white-space: nowrap; }
-  .waiting h4 { margin: 0 0 6px; font-size: 13px; color: var(--ink-60); font-weight: 600; }
-  @media (max-width: 760px) { .waiting { grid-template-columns: 1fr; } .waiting div + div h4 { margin-top: 28px; } }
-
   footer { border-top: 1px solid var(--ink); }
   footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; padding-bottom: 28px; font-size: 13px; color: var(--ink-60); }
 </style>
@@ -165,59 +144,7 @@
   </div>
 </section>
 
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head"><h2>Logo morph</h2><span class="label">After Effects · 4.0s · 30fps</span></div>
-    <div class="morphs">
-      <figure>
-        <video autoplay muted loop playsinline preload="metadata" poster="assets/morph/batavia-morph-stacked-end.png">
-          <source src="assets/morph/batavia-morph-stacked.webm" type="video/webm"><source src="assets/morph/batavia-morph-stacked.mp4" type="video/mp4">
-        </video>
-        <figcaption><b>Stacked</b><span>used on the site · <a href="assets/morph/batavia-morph-stacked.mp4" download>MP4 207 KB</a> · <a href="assets/morph/batavia-morph-stacked.webm" download>WebM 155 KB</a></span></figcaption>
-      </figure>
-      <figure>
-        <video autoplay muted loop playsinline preload="metadata" poster="assets/morph/batavia-morph-horizontal-end.png">
-          <source src="assets/morph/batavia-morph-horizontal.webm" type="video/webm"><source src="assets/morph/batavia-morph-horizontal.mp4" type="video/mp4">
-        </video>
-        <figcaption><b>Horizontal</b><span>spare, e.g. social · <a href="assets/morph/batavia-morph-horizontal.mp4" download>MP4 186 KB</a> · <a href="assets/morph/batavia-morph-horizontal.webm" download>WebM 142 KB</a></span></figcaption>
-      </figure>
-      <div class="story">
-        <div><b>0.0s</b>BCI logo holds</div>
-        <div><b>0.6s</b>Descriptors slide off, C and I fall</div>
-        <div><b>0.9s</b>The box on the swoosh tumbles in and becomes the cube; the swoosh wraps into the hexagon</div>
-        <div><b>2.3s</b>“Batavia” lands and holds, with brand clear space</div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head"><h2>Waiting on</h2><span class="label">Before build week</span></div>
-    <div class="waiting">
-      <div>
-        <h4>From Batavia</h4>
-        <ol>
-          <li><span>Email marketing platform, and access</span><small>VIP form</small></li>
-          <li><span>Giveaway: yes or no, and the rules</span><small>VIP form</small></li>
-          <li><span>Launch month for 2027, if known</span><small>copy</small></li>
-          <li><span>Who gets VIP sign-up notifications</span><small>form</small></li>
-          <li><span>Adobe Fonts access (kit hgt4prc)</span><small>fonts</small></li>
-        </ol>
-      </div>
-      <div>
-        <h4>Decisions</h4>
-        <ol>
-          <li><span>Header lockup: Container Incorporated?</span><small>logo</small></li>
-          <li><span>“BCI” in existing copy: leave, or swap to Batavia</span><small>copy</small></li>
-          <li><span>Option 1 or option 2 for the homepage</span><small>homepage</small></li>
-          <li><span>Body copy from the copy team</span><small>new page</small></li>
-          <li><span>Test on real iPhones and Android phones</span><small>QA</small></li>
-        </ol>
-      </div>
-    </div>
-  </div>
-</section>
 
 <footer>
   <div class="wrap"><span>Pinnacle Advertising · review mockups, not the live site</span><span>Pages run on a copy of bataviacontainer.com with analytics stripped.</span></div>
