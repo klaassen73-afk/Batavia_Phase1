@@ -102,3 +102,24 @@ html.p1-pop-lock { overflow: hidden; }
   .p1-pop__ctas .btn { padding: 12px 16px; min-height: 44px; }
   .p1-pop__later { align-self: center; margin-top: 0; }
 }
+
+/* ---- Phone polish (Nov 2): grab handle instead of the red rule, stronger dim, uncropped logo video ---- */
+@media (max-width: 567px), (max-width: 767px) and (min-height: 521px) {
+  .p1-pop__scrim { background: rgba(14, 22, 54, .62); }
+  .p1-pop__card { border-top: 0; border-radius: 18px 18px 0 0; padding-top: 14px; }
+  .p1-pop__card::before { content: ""; position: absolute; top: 8px; left: 50%; width: 40px; height: 4px; margin-left: -20px; border-radius: 2px; background: #D0D0D0; }
+  .p1-pop__x { top: 10px; right: 8px; }
+  .p1-pop__stage { padding: 6px 0 0; }
+  .p1-pop .morph--video { height: min(25vh, 210px); height: min(25dvh, 210px); width: auto; aspect-ratio: 4/3; margin: 0 auto; }
+  .p1-pop__body h2 { margin: 4px 0 14px; }
+}
+@media (max-width: 567px), (max-width: 767px) and (min-height: 521px) {
+  /* trim the video's 1.5X clear space to the brand-guide minimum of 1X (X = cube width) to save height on phones */
+  .p1-pop .morph--video { height: auto; width: min(76vw, 300px); aspect-ratio: 1600 / 943; }
+  .p1-pop__stage { padding-top: 2px; }
+}
+
+/* No accent rule on the card; the × uses Batavia Red 1 (#C22026, 6:1 on white) */
+.p1-pop__card { border-top: 0; }
+.p1-pop__x { color: var(--red-1); background: rgba(255,255,255,.9); }
+.p1-pop__x:hover, .p1-pop__x:focus-visible { color: #fff; background: var(--red-1); }

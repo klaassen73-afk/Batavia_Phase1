@@ -14,5 +14,8 @@
   .p1-announce__short { display: inline; }
 }
 
-/* Logo swap: the live header shrinks the old logo on small screens; keep the new one at or above the 120px digital minimum */
-img[src*="horizontal-container-incorporated"] { min-width: 150px; max-width: none; }
+/* Logo swap: the new lockup is taller than the old BCI logo. On tablet/phone the live hero slides up exactly 163px
+   under the header, so the logo is sized to keep the header that tall (still above the 120px digital minimum). */
+@media (max-width: 1024px) {
+  img[src*="horizontal-container-incorporated"] { width: 132px !important; min-width: 120px; max-width: none; height: auto !important; }
+}

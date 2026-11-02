@@ -760,6 +760,19 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 //# sourceURL=https://www.bataviacontainer.com/wp-includes/js/wp-emoji-loader.min.js
 </script>
 
+<script>
+(function () {
+  function fit() {
+    var hd = document.querySelector('header[data-elementor-type="header"]');
+    var first = document.querySelector('[data-elementor-type="wp-page"] > section');
+    if (!hd || !first) return;
+    first.style.marginTop = '';
+    var below = first.getBoundingClientRect().top - hd.getBoundingClientRect().top;   // > 0 means white shows
+    if (below > 0) first.style.marginTop = (parseFloat(getComputedStyle(first).marginTop) - below) + 'px';
+  }
+  window.addEventListener('load', fit); window.addEventListener('resize', fit);
+})();
+</script>
 <div class="be-page p1-pop" id="p1Pop" hidden>
   <div class="p1-pop__scrim" data-close></div>
   <div class="p1-pop__card" role="dialog" aria-modal="true" aria-labelledby="p1PopTitle">

@@ -628,5 +628,18 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 //# sourceURL=https://www.bataviacontainer.com/wp-includes/js/wp-emoji-loader.min.js
 </script>
 
+<script>
+(function () {
+  function fit() {
+    var hd = document.querySelector('header[data-elementor-type="header"]');
+    var first = document.querySelector('[data-elementor-type="wp-page"] > section');
+    if (!hd || !first) return;
+    first.style.marginTop = '';
+    var below = first.getBoundingClientRect().top - hd.getBoundingClientRect().top;   // > 0 means white shows
+    if (below > 0) first.style.marginTop = (parseFloat(getComputedStyle(first).marginTop) - below) + 'px';
+  }
+  window.addEventListener('load', fit); window.addEventListener('resize', fit);
+})();
+</script>
 </body>
 </html>
