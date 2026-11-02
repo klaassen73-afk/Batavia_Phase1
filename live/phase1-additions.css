@@ -1,0 +1,18 @@
+/* Only the new Phase 1 element; everything else comes from the swept live CSS */
+.p1-announce { display: block; background: #284393; color: #fff; text-decoration: none;
+  font-family: "Proxima Nova", proxima-nova, "Helvetica Neue", Arial, sans-serif; font-size: 15px; line-height: 20px;
+  border-bottom: 3px solid #EB2D32; position: relative; z-index: 100; }
+.p1-announce:hover { background: #22397e; color: #fff; }
+.p1-announce__inner { max-width: 1200px; margin: 0 auto; padding: 10px 24px; display: flex; align-items: center; justify-content: center; gap: 12px; }
+.p1-announce__mark { width: 18px; height: auto; flex: none; }
+.p1-announce strong { font-weight: 800; }
+.p1-announce__cta { font-weight: 600; white-space: nowrap; text-decoration: underline; text-underline-offset: 3px; }
+.p1-announce__short { display: none; }
+@media (max-width: 767px) {
+  .p1-announce { font-size: 14px; }
+  .p1-announce__long, .p1-announce__cta { display: none; }
+  .p1-announce__short { display: inline; }
+}
+
+/* Logo swap: the live header shrinks the old logo on small screens; keep the new one at or above the 120px digital minimum */
+img[src*="horizontal-container-incorporated"] { min-width: 150px; max-width: none; }

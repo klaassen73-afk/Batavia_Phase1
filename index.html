@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Batavia · Website Phase 1 · Review</title>
+<link rel="icon" href="assets/batavia-mark-fullcolor.svg" type="image/svg+xml">
+<style>
+  :root {
+    --ink: #231F20; --ink-60: #808285; --rule: #D9D6D0; --paper: #F4F2EE; --white: #fff;
+    --blue: #284393; --blue-2: #3C5DAA; --red: #C22026; --red-2: #EB2D32;
+    --font: "Proxima Nova", proxima-nova, "Helvetica Neue", Arial, sans-serif;
+    --wide: "Proxima Nova Wide", proxima-nova-wide, "Proxima Nova", proxima-nova, "Helvetica Neue", Arial, sans-serif;
+    --g: clamp(16px, 4vw, 56px);
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 400 16px/1.55 var(--font); font-synthesis: none; }
+  a { color: inherit; }
+  img, video { display: block; max-width: 100%; }
+  .wrap { max-width: 1360px; margin: 0 auto; padding: 0 var(--g); }
+  .label { font: 600 11px/14px var(--wide); letter-spacing: .18em; text-transform: uppercase; }
+
+  /* masthead */
+  .mast { border-bottom: 1px solid var(--ink); }
+  .mast .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 18px; padding-bottom: 18px; }
+  .mast img { width: 150px; }
+
+  /* hero */
+  .hero .wrap { display: grid; grid-template-columns: 1.15fr 1fr; gap: var(--g); align-items: end; padding-top: clamp(40px, 7vw, 96px); padding-bottom: clamp(40px, 6vw, 80px); }
+  .hero h1 { margin: 0; font-weight: 800; font-size: clamp(44px, 7vw, 116px); line-height: .9; letter-spacing: -.04em; white-space: nowrap; }
+  .hero h1 span { color: var(--red-2); }
+  .hero p { max-width: 30em; margin: 28px 0 0; font-size: clamp(17px, 1.6vw, 21px); line-height: 1.45; }
+  .reel { position: relative; margin: 0; background: var(--white); border: 1px solid var(--rule); }
+  .reel video { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+  .reel figcaption { display: flex; justify-content: space-between; padding: 10px 14px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-60); }
+  @media (max-width: 900px) { .hero .wrap { grid-template-columns: 1fr; } .reel { order: -1; } }
+
+  /* section heads */
+  .sec { border-top: 1px solid var(--ink); }
+  .sec-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; }
+  .sec-head h2 { margin: 0; font-size: 15px; font-weight: 600; }
+
+  /* mockup rows */
+  .row { display: grid; grid-template-columns: 90px 1fr 1.6fr; gap: var(--g); padding: 40px 0 56px; border-top: 1px solid var(--rule); }
+  .row:first-of-type { border-top: 0; }
+  .num { font-weight: 800; font-size: 56px; line-height: .9; letter-spacing: -.04em; color: var(--red-2); }
+  .meta h3 { margin: 0 0 10px; font-size: clamp(26px, 2.6vw, 36px); line-height: 1.05; font-weight: 800; letter-spacing: -.01em; }
+  .meta p { margin: 0 0 18px; max-width: 26em; }
+  .meta ul { list-style: none; margin: 0 0 22px; padding: 0; font-size: 14px; color: var(--ink-60); }
+  .meta li { padding: 6px 0; border-top: 1px solid var(--rule); }
+  .meta li:last-child { border-bottom: 1px solid var(--rule); }
+  .go { display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; background: var(--ink); color: var(--white); text-decoration: none; font-weight: 600; font-size: 15px; }
+  .go:hover { background: var(--blue); }
+  .go svg { width: 14px; height: 14px; }
+  .shots { position: relative; padding-right: 110px; }
+  .desk { display: block; border: 1px solid var(--ink); background: var(--white); text-decoration: none; transition: transform .25s; }
+  .desk:hover { transform: translateY(-4px); }
+  .desk i { display: block; height: 22px; border-bottom: 1px solid var(--ink); background: var(--white); position: relative; }
+  .desk i::before { content: ""; position: absolute; left: 10px; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--ink); box-shadow: 11px 0 0 var(--ink), 22px 0 0 var(--ink); }
+  .desk img { width: 100%; aspect-ratio: 16/10; object-fit: cover; object-position: top; }
+  .phone { position: absolute; right: 0; bottom: -28px; width: 170px; height: 360px; border: 6px solid var(--ink); border-radius: 22px; overflow: hidden; background: var(--white); box-shadow: 0 18px 40px rgba(35,31,32,.25); }
+  .phone iframe { width: 390px; height: 822px; border: 0; transform: scale(.405); transform-origin: 0 0; pointer-events: none; }
+  .phone span { position: absolute; left: 0; right: 0; bottom: 0; padding: 4px; background: var(--ink); color: var(--white); text-align: center; font: 600 9px/12px var(--wide); letter-spacing: .14em; text-transform: uppercase; }
+  @media (max-width: 1000px) {
+    .row { grid-template-columns: 1fr; gap: 20px; }
+    .num { font-size: 40px; }
+  }
+  @media (max-width: 560px) { .shots { padding-right: 0; } .phone { display: none; } }
+
+  /* morph */
+  .morphs { display: grid; grid-template-columns: 1fr 1fr; gap: var(--g); padding: 32px 0 56px; }
+  .morphs figure { margin: 0; }
+  .morphs video { width: 100%; aspect-ratio: 4/3; object-fit: cover; background: var(--white); border: 1px solid var(--rule); }
+  .morphs figcaption { display: flex; justify-content: space-between; gap: 12px; padding-top: 10px; font-size: 14px; }
+  .morphs figcaption span { color: var(--ink-60); }
+  .morphs a { font-weight: 600; text-underline-offset: 3px; }
+  .story { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--rule); }
+  .story div { padding: 14px 16px 0 0; font-size: 14px; }
+  .story b { display: block; font-size: 13px; color: var(--red); margin-bottom: 2px; }
+  @media (max-width: 760px) { .morphs { grid-template-columns: 1fr; } .story { grid-template-columns: 1fr 1fr; gap: 0 16px; } }
+
+  /* waiting on */
+  .waiting { display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--g); padding: 8px 0 64px; }
+  .waiting ol { margin: 0; padding: 0; list-style: none; counter-reset: w; }
+  .waiting li { counter-increment: w; display: grid; grid-template-columns: 34px 1fr auto; gap: 8px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+  .waiting li::before { content: counter(w, decimal-leading-zero); color: var(--ink-60); font-size: 13px; padding-top: 2px; }
+  .waiting li small { color: var(--ink-60); font-size: 13px; white-space: nowrap; }
+  .waiting h4 { margin: 0 0 6px; font-size: 13px; color: var(--ink-60); font-weight: 600; }
+  @media (max-width: 760px) { .waiting { grid-template-columns: 1fr; } .waiting div + div h4 { margin-top: 28px; } }
+
+  footer { border-top: 1px solid var(--ink); }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; padding-bottom: 28px; font-size: 13px; color: var(--ink-60); }
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap">
+    <img src="assets/batavia-logo-horizontal-fullcolor.svg" alt="Batavia">
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Phase One<span>.</span></h1>
+      <p>New logo, a brand-colored footer and a “We’re evolving” bar on the live bataviacontainer.com, plus one new page that tells the story. Everything here runs on a copy of the real site.</p>
+    </div>
+    <figure class="reel">
+      <video autoplay muted loop playsinline preload="auto" poster="assets/morph/batavia-morph-stacked-end.png">
+        <source src="assets/morph/batavia-morph-stacked.webm" type="video/webm">
+        <source src="assets/morph/batavia-morph-stacked.mp4" type="video/mp4">
+      </video>
+      <figcaption><span>BCI → Batavia, After Effects</span><span>loop</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><h2>The mockups</h2><span class="label">Click to open · phone views are live</span></div>
+
+    <article class="row">
+      <div class="num">01</div>
+      <div class="meta">
+        <h3>Homepage, light touch</h3>
+        <p>The live homepage exactly as it is today, with three changes.</p>
+        <ul><li>New logo in the header, footer and browser tab</li><li>Footer recolored to Batavia Blue</li><li>“We’re evolving…” bar across the top</li></ul>
+        <a class="go" href="live/homepage-reskin.html" target="_blank" rel="noopener">Open <svg viewBox="0 0 14 14"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+      </div>
+      <div class="shots">
+        <a class="desk" href="live/homepage-reskin.html" target="_blank" rel="noopener"><i></i><img src="assets/thumbs/homepage-reskin-desktop.jpg" alt="Homepage option 1, desktop" loading="lazy"></a>
+        <div class="phone"><iframe src="live/homepage-reskin.html?still" title="Homepage option 1, phone" loading="lazy" tabindex="-1"></iframe><span>Phone</span></div>
+      </div>
+    </article>
+
+    <article class="row">
+      <div class="num">02</div>
+      <div class="meta">
+        <h3>Homepage + brand popup</h3>
+        <p>Same page, plus a bigger moment: a popup with the logo morph, once per visit.</p>
+        <ul><li>Opens 1.5s after the page loads</li><li>Slim bottom sheet on phones, about 40–50% of the screen</li><li>Links to the new page and early-access form</li></ul>
+        <a class="go" href="live/homepage-option2.html?popup" target="_blank" rel="noopener">Open <svg viewBox="0 0 14 14"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+      </div>
+      <div class="shots">
+        <a class="desk" href="live/homepage-option2.html?popup" target="_blank" rel="noopener"><i></i><img src="assets/thumbs/homepage-option2-desktop.jpg" alt="Homepage option 2 with popup, desktop" loading="lazy"></a>
+        <div class="phone"><iframe src="live/homepage-option2.html?still" title="Homepage option 2, phone" loading="lazy" tabindex="-1"></iframe><span>Phone</span></div>
+      </div>
+    </article>
+
+    <article class="row">
+      <div class="num">03</div>
+      <div class="meta">
+        <h3>Our New Brand page</h3>
+        <p>The new page at /our-new-brand/, inside the site’s own header and footer.</p>
+        <ul><li>Logo morph in the hero</li><li>Why we changed, and the 2027 web teaser</li><li>VIP early-access form (Gravity Forms)</li><li>Body copy is a placeholder for the copy team</li></ul>
+        <a class="go" href="live/brand-evolution.html" target="_blank" rel="noopener">Open <svg viewBox="0 0 14 14"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+      </div>
+      <div class="shots">
+        <a class="desk" href="live/brand-evolution.html" target="_blank" rel="noopener"><i></i><img src="assets/thumbs/brand-evolution-desktop.jpg" alt="Our New Brand page, desktop" loading="lazy"></a>
+        <div class="phone"><iframe src="live/brand-evolution.html?still" title="Our New Brand page, phone" loading="lazy" tabindex="-1"></iframe><span>Phone</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><h2>Logo morph</h2><span class="label">After Effects · 4.0s · 30fps</span></div>
+    <div class="morphs">
+      <figure>
+        <video autoplay muted loop playsinline preload="metadata" poster="assets/morph/batavia-morph-stacked-end.png">
+          <source src="assets/morph/batavia-morph-stacked.webm" type="video/webm"><source src="assets/morph/batavia-morph-stacked.mp4" type="video/mp4">
+        </video>
+        <figcaption><b>Stacked</b><span>used on the site · <a href="assets/morph/batavia-morph-stacked.mp4" download>MP4 207 KB</a> · <a href="assets/morph/batavia-morph-stacked.webm" download>WebM 155 KB</a></span></figcaption>
+      </figure>
+      <figure>
+        <video autoplay muted loop playsinline preload="metadata" poster="assets/morph/batavia-morph-horizontal-end.png">
+          <source src="assets/morph/batavia-morph-horizontal.webm" type="video/webm"><source src="assets/morph/batavia-morph-horizontal.mp4" type="video/mp4">
+        </video>
+        <figcaption><b>Horizontal</b><span>spare, e.g. social · <a href="assets/morph/batavia-morph-horizontal.mp4" download>MP4 186 KB</a> · <a href="assets/morph/batavia-morph-horizontal.webm" download>WebM 142 KB</a></span></figcaption>
+      </figure>
+      <div class="story">
+        <div><b>0.0s</b>BCI logo holds</div>
+        <div><b>0.6s</b>Descriptors slide off, C and I fall</div>
+        <div><b>0.9s</b>The box on the swoosh tumbles in and becomes the cube; the swoosh wraps into the hexagon</div>
+        <div><b>2.3s</b>“Batavia” lands and holds, with brand clear space</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><h2>Waiting on</h2><span class="label">Before build week</span></div>
+    <div class="waiting">
+      <div>
+        <h4>From Batavia</h4>
+        <ol>
+          <li><span>Email marketing platform, and access</span><small>VIP form</small></li>
+          <li><span>Giveaway: yes or no, and the rules</span><small>VIP form</small></li>
+          <li><span>Launch month for 2027, if known</span><small>copy</small></li>
+          <li><span>Who gets VIP sign-up notifications</span><small>form</small></li>
+          <li><span>Adobe Fonts access (kit hgt4prc)</span><small>fonts</small></li>
+        </ol>
+      </div>
+      <div>
+        <h4>Decisions</h4>
+        <ol>
+          <li><span>Header lockup: Container Incorporated?</span><small>logo</small></li>
+          <li><span>“BCI” in existing copy: leave, or swap to Batavia</span><small>copy</small></li>
+          <li><span>Option 1 or option 2 for the homepage</span><small>homepage</small></li>
+          <li><span>Body copy from the copy team</span><small>new page</small></li>
+          <li><span>Test on real iPhones and Android phones</span><small>QA</small></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><span>Pinnacle Advertising · review mockups, not the live site</span><span>Pages run on a copy of bataviacontainer.com with analytics stripped.</span></div>
+</footer>
+
+</body>
+</html>

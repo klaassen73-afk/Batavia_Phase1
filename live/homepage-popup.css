@@ -1,0 +1,104 @@
+/* Homepage option 2: brand popup with the logo transition.
+   Reuses .be-page tokens, buttons, morph and copy-tbd styles from brand-evolution.css. */
+.p1-pop { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 24px; }
+.p1-pop[hidden] { display: none; }
+.p1-pop__scrim { position: absolute; inset: 0; background: rgba(20, 30, 70, .62); opacity: 0; transition: opacity .25s; }
+.p1-pop__card {
+  position: relative; width: min(960px, 100%); display: grid; grid-template-columns: 1.05fr 1fr;
+  background: var(--white); border-radius: 10px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,.4);
+  opacity: 0; transform: translateY(16px) scale(.98); transition: opacity .25s, transform .25s;
+  border-top: 4px solid var(--red-2);
+}
+.p1-pop.is-open .p1-pop__scrim { opacity: 1; }
+.p1-pop.is-open .p1-pop__card { opacity: 1; transform: none; }
+html.p1-pop-lock { overflow: hidden; }
+
+.p1-pop__stage { background: var(--paper); display: grid; place-items: center; padding: 40px; }
+.p1-pop__stage .morph { width: 100%; box-shadow: none; background: transparent; }
+.p1-pop__body { padding: 48px 44px 36px; display: flex; flex-direction: column; justify-content: center; }
+.p1-pop__body h2 { color: var(--blue-1); }
+.p1-pop__ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.be-page .btn--outline { background: transparent; color: var(--blue-1); border-color: var(--blue-1); }
+.be-page .btn--outline:hover { background: var(--blue-1); color: var(--white); }
+.p1-pop__later {
+  align-self: flex-start; margin-top: 14px; padding: 4px 0; border: 0; background: none; cursor: pointer;
+  font: 600 14px/20px var(--font); color: var(--black-80); text-decoration: underline; text-underline-offset: 3px;
+}
+.p1-pop__later:hover { background: none; color: var(--blue-1); }
+.p1-pop__x {
+  position: absolute; top: 10px; right: 12px; z-index: 2; width: 40px; height: 40px; padding: 0;
+  border: 0; border-radius: 50%; background: rgba(255,255,255,.9); color: var(--black); cursor: pointer;
+  font: 400 28px/40px var(--font);
+}
+.p1-pop__x:hover { background: var(--paper); color: var(--red-1); }
+
+/* Mockup chip has two buttons here */
+.be-page .mock-chip button + button { background: #555; }
+
+/* Logo fills more of the popup stage than the hero card */
+.p1-pop .morph .nl { width: 92%; }
+.p1-pop .morph__old { width: 80%; }
+.p1-pop .morph__replay { right: 0; bottom: 0; }
+
+/* Phones: bottom sheet that leaves the page visible above it (lowers risk under Google's intrusive-interstitial rule) */
+@media (max-width: 767px) {
+  .p1-pop { place-items: end stretch; padding: 0; }
+  .p1-pop__scrim { background: rgba(20, 30, 70, .35); }
+  .p1-pop__card { grid-template-columns: 1fr; border-radius: 14px 14px 0 0; transform: translateY(40px); max-height: 72vh; overflow-y: auto; }
+  .p1-pop__stage { padding: 14px 56px 4px 24px; }
+  .p1-pop__stage .morph { aspect-ratio: 3.4/1; }
+  .p1-pop .morph .nl { width: 84%; }
+  .p1-pop .morph__replay { display: none; }
+  .p1-pop__body { padding: 6px 24px 16px; }
+  .p1-pop__body h2 { font-size: 26px; line-height: 30px; margin-bottom: 10px; }
+  .p1-pop .copy-tbd { margin-bottom: 14px; }
+  .p1-pop__ctas { gap: 8px; }
+  .p1-pop__ctas .btn { padding: 12px 16px; }
+  .p1-pop__later { margin-top: 8px; }
+  .p1-pop__ctas .btn { flex: 1 1 auto; justify-content: center; }
+  .p1-pop__later { align-self: center; }
+}
+
+
+/* Video version of the morph: the stage matches the video's white background */
+.p1-pop__stage { background: var(--white); }
+.p1-pop .morph--video { aspect-ratio: 4/3; }
+@media (max-width: 767px) {
+  .p1-pop .morph--video { aspect-ratio: 16/9; }   /* crops only empty white space above/below the stacked logo */
+  .p1-pop__stage { padding: 8px 16px 0; }
+}
+
+/* ---- Mobile fixes (audit Nov 2) ---- */
+/* never taller than the screen; scrolls inside if it has to, so × is always reachable */
+.p1-pop__card { max-height: calc(100vh - 32px); max-height: calc(100dvh - 32px); overflow-y: auto; }
+/* 44px touch targets */
+.p1-pop__x { width: 44px; height: 44px; line-height: 44px; }
+.p1-pop__later { min-height: 44px; padding: 12px 8px; margin-top: 4px; }
+@media (max-width: 767px) {
+  .p1-pop__card { max-height: 78vh; max-height: 78dvh; }
+  /* video band scales with the screen but never eats more than ~a quarter of it */
+  .p1-pop .morph--video { aspect-ratio: auto; height: min(56.25vw, 24vh); height: min(56.25vw, 24dvh); }
+}
+/* phones held sideways (short screens): side-by-side, compact */
+@media (max-height: 520px) and (min-width: 568px) {
+  .p1-pop { place-items: center; padding: 8px; }
+  .p1-pop__card { grid-template-columns: .9fr 1fr; border-radius: 10px; max-height: calc(100dvh - 16px); transform: none; }
+  .p1-pop__stage { padding: 12px; }
+  .p1-pop .morph--video { aspect-ratio: 4/3; height: auto; }
+  .p1-pop__body { padding: 20px 24px 12px; }
+  .p1-pop__body h2 { font-size: 26px; line-height: 30px; margin-bottom: 10px; }
+  .p1-pop .copy-tbd { margin-bottom: 12px; }
+  .p1-pop__ctas .btn { padding: 10px 16px; }
+}
+
+/* ---- Slim phone version: logo band, headline, two buttons (body copy lives on the Brand Evolution page) ---- */
+@media (max-width: 567px), (max-width: 767px) and (min-height: 521px) {
+  .p1-pop__stage { padding: 6px 52px 0; }
+  .p1-pop .morph--video { height: min(40vw, 17vh); height: min(40vw, 17dvh); }
+  .p1-pop__body { padding: 4px 20px 10px; text-align: center; }
+  .p1-pop__body .eyebrow, .p1-pop__body .copy-tbd { display: none; }
+  .p1-pop__body h2 { font-size: 22px; line-height: 28px; margin-bottom: 12px; }
+  .p1-pop__ctas { flex-direction: column; gap: 8px; }
+  .p1-pop__ctas .btn { padding: 12px 16px; min-height: 44px; }
+  .p1-pop__later { align-self: center; margin-top: 0; }
+}
