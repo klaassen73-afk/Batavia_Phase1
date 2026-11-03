@@ -174,3 +174,6 @@ header[data-elementor-type="header"] { position: relative; z-index: 10; }
 
 /* 44px touch target for Replay */
 .be-page .morph__replay { min-height: 44px; min-width: 44px; padding: 12px 10px; right: 6px; bottom: 4px; }
+
+/* In-page links (#why, #early-access) stop below the pinned announcement bar */
+.be-page section[id] { scroll-margin-top: 72px; }
