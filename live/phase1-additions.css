@@ -1,10 +1,9 @@
 /* Only the new Phase 1 element; everything else comes from the swept live CSS */
-.p1-announce { display: block; background: #284393; color: #fff; text-decoration: none;
+.p1-announce { display: block; background: #C22026; color: #fff;   /* Batavia Red 1: white text passes AA (6:1) */ text-decoration: none;
   font-family: "Proxima Nova", proxima-nova, "Helvetica Neue", Arial, sans-serif; font-size: 16px; line-height: 22px;
-  border-bottom: 3px solid #EB2D32;
   /* stays pinned to the top of the window while the page scrolls (below the popup, above the page) */
   position: -webkit-sticky; position: sticky; top: 0; z-index: 900; }
-.p1-announce:hover { background: #22397e; color: #fff; }
+.p1-announce:hover { background: #A51B20; color: #fff; }
 .p1-announce__inner { max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; justify-content: center; gap: 12px; }
 .p1-announce__mark { width: 22px; height: auto; flex: none; }
 .p1-announce strong { font-weight: 800; }
