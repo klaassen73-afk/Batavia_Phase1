@@ -1,7 +1,7 @@
 /* Brand Evolution landing page content.
    Everything is scoped to .be-page so the live site's header, nav and footer stay exactly as they are. */
 .be-page {
-  --blue-1: #0F367E; --blue-2: #4F5898; --blue-3: #8485B7;
+  --blue-1: #0F367E; --blue-2: #4F5898; --blue-3: #8485B7; --blue-90: #294488;
   --red-1: #BF1326; --red-2: #CC4842;
   --black: #231F20; --black-80: #58595B; --black-60: #808285;
   --paper: #F5F5F5; --white: #FFFFFF;
@@ -133,7 +133,7 @@ header[data-elementor-type="header"] { position: relative; z-index: 10; }
 @media (max-width: 1023px) { .be-page .digital__grid { grid-template-columns: 1fr; gap: 36px; } }
 
 /* VIP form */
-.be-page .vip { background: var(--blue-2); color: var(--white); position: relative; overflow: hidden; }
+.be-page .vip { background: var(--blue-90); color: var(--white); position: relative; overflow: hidden; }
 .be-page .vip::before { content: ""; position: absolute; right: -80px; top: -60px; width: 420px; height: 420px; background: url("../assets/batavia-mark-white.svg") center/contain no-repeat; opacity: .06; }
 .be-page .vip__grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
 .be-page .vip .eyebrow, .be-page .vip h2 { color: var(--white); }
