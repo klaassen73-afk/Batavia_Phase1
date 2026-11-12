@@ -1,8 +1,8 @@
 /* Brand Evolution landing page content.
    Everything is scoped to .be-page so the live site's header, nav and footer stay exactly as they are. */
 .be-page {
-  --blue-1: #284393; --blue-2: #3C5DAA; --blue-3: #8789BE;
-  --red-1: #C22026; --red-2: #EB2D32;
+  --blue-1: #0F367E; --blue-2: #4F5898; --blue-3: #8485B7;
+  --red-1: #BF1326; --red-2: #CC4842;
   --black: #231F20; --black-80: #58595B; --black-60: #808285;
   --paper: #F5F5F5; --white: #FFFFFF;
   --font: "Proxima Nova", proxima-nova, "Helvetica Neue", Arial, sans-serif;
@@ -143,7 +143,7 @@ header[data-elementor-type="header"] { position: relative; z-index: 10; }
 .be-page .field label { display: block; font-weight: 600; font-size: 15px; line-height: 20px; margin-bottom: 6px; color: var(--black); }
 .be-page .field label small { font-weight: 400; color: var(--black-80); font-size: 13px; }
 .be-page .field input { width: 100%; font: 16px/22px var(--font); padding: 12px 14px; border: 1px solid #BDBDBD; border-radius: 4px; color: var(--black); background: var(--white); }
-.be-page .field input:focus { outline: 3px solid rgba(60,93,170,.35); border-color: var(--blue-2); }
+.be-page .field input:focus { outline: 3px solid rgba(79,88,152,.35); border-color: var(--blue-2); }
 .be-page .form .btn { width: 100%; justify-content: center; margin-top: 4px; }
 .be-page .form__legal { font-size: 12px; line-height: 16px; color: var(--black-80); margin: 14px 0 0; }
 .be-page .form__done { display: none; text-align: center; padding: 24px 8px; }

@@ -119,7 +119,7 @@ html.p1-pop-lock { overflow: hidden; }
   .p1-pop__stage { padding-top: 2px; }
 }
 
-/* No accent rule on the card; the × uses Batavia Red 1 (#C22026, 6:1 on white) */
+/* No accent rule on the card; the × uses Batavia Red (PMS 187 C, #BF1326, 6.3:1 on white) */
 .p1-pop__card { border-top: 0; }
 .p1-pop__x { color: var(--red-1); background: rgba(255,255,255,.9); }
 .p1-pop__x:hover, .p1-pop__x:focus-visible { color: #fff; background: var(--red-1); }
