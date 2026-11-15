@@ -123,3 +123,7 @@ html.p1-pop-lock { overflow: hidden; }
 .p1-pop__card { border-top: 0; }
 .p1-pop__x { color: var(--red-1); background: rgba(255,255,255,.9); }
 .p1-pop__x:hover, .p1-pop__x:focus-visible { color: #fff; background: var(--red-1); }
+
+/* Body copy (Nov 15): desktop only, hidden in the slim phone sheet like the old placeholder */
+.p1-pop .p1-pop__copy { font-size: 17px; line-height: 26px; margin-bottom: 24px; }
+@media (max-width: 567px), (max-width: 767px) and (min-height: 521px) { .p1-pop .p1-pop__copy { display: none; } }
