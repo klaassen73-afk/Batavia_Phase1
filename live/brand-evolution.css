@@ -106,7 +106,7 @@ header[data-elementor-type="header"] { position: relative; z-index: 10; }
 }
 
 /* Why */
-.be-page .why .wrap > div { max-width: 760px; }
+.be-page .why .wrap > div { max-width: none; }
 .be-page .why h2 { color: var(--blue-1); }
 .be-page .why .copy-tbd { max-width: none; }
 
@@ -182,3 +182,4 @@ header[data-elementor-type="header"] { position: relative; z-index: 10; }
 .be-page .body-copy { max-width: 36em; margin: 0 0 28px; font-size: 18px; line-height: 28px; }
 .be-page .be-hero .body-copy, .be-page .vip .body-copy { color: rgba(255,255,255,.92); }
 @media (max-width: 767px) { .be-page .body-copy { font-size: 17px; line-height: 26px; } }
+.be-page .why .body-copy { max-width: none; }
