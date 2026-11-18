@@ -316,8 +316,9 @@ body .gform_wrapper .gform_title {
       if (v.getAttribute('data-loaded') === L) return;
       v.setAttribute('data-loaded', L);
       v.poster = '../assets/morph/batavia-morph-' + L + (still ? '-end' : '-start') + '.png?v=1118';
-      v.innerHTML = '<source src="../assets/morph/batavia-morph-' + L + '.webm?v=1118" type="video/webm">' +
-                    '<source src="../assets/morph/batavia-morph-' + L + '.mp4?v=1118" type="video/mp4">';
+      // MP4 (H.264) first: Safari's WebM playback can stall or stop looping; every browser plays the MP4
+      v.innerHTML = '<source src="../assets/morph/batavia-morph-' + L + '.mp4?v=1118" type="video/mp4">' +
+                    '<source src="../assets/morph/batavia-morph-' + L + '.webm?v=1118" type="video/webm">';
       v.load();
     }
     v.addEventListener('ended', function () { m.classList.add('is-done'); });
