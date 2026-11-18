@@ -336,9 +336,9 @@ body .gform_wrapper .gform_title {
       var L = pickLayout ? pickLayout() : v.getAttribute('data-layout');
       if (v.getAttribute('data-loaded') === L) return;
       v.setAttribute('data-loaded', L);
-      v.poster = '../assets/morph/batavia-morph-' + L + (still ? '-end' : '-start') + '.png';
-      v.innerHTML = '<source src="../assets/morph/batavia-morph-' + L + '.webm" type="video/webm">' +
-                    '<source src="../assets/morph/batavia-morph-' + L + '.mp4" type="video/mp4">';
+      v.poster = '../assets/morph/batavia-morph-' + L + (still ? '-end' : '-start') + '.png?v=1118';
+      v.innerHTML = '<source src="../assets/morph/batavia-morph-' + L + '.webm?v=1118" type="video/webm">' +
+                    '<source src="../assets/morph/batavia-morph-' + L + '.mp4?v=1118" type="video/mp4">';
       v.load();
     }
     v.addEventListener('ended', function () { m.classList.add('is-done'); });
@@ -348,7 +348,7 @@ body .gform_wrapper .gform_title {
       if (still) { m.classList.add('is-done'); return; }
       try { v.currentTime = 0; } catch (e) {}
       // If autoplay is blocked (e.g. iPhone Low Power Mode), show the new logo rather than the old one
-      var p = v.play(); if (p && p.catch) p.catch(function () { v.poster = v.poster.replace('-start.png', '-end.png'); m.classList.add('is-done'); });
+      var p = v.play(); if (p && p.catch) p.catch(function () { v.poster = v.poster.replace("-start.png", "-end.png"); m.classList.add('is-done'); });
     }
     load();
     return play;
