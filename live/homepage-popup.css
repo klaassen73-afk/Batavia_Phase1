@@ -133,3 +133,9 @@ html.p1-pop-lock { overflow: hidden; }
 @media (max-width: 567px), (max-width: 767px) and (min-height: 521px) {
   .p1-pop .p1-pop__sub { margin: -6px 0 14px; font-size: 15px; line-height: 20px; }
 }
+
+/* Grey caption under the morph (matches the Brand Evolution page caption), set below the video instead of over it */
+.p1-pop .p1-pop__caption { position: static; margin: 4px 0 0; padding: 0 16px; }
+@media (max-width: 567px), (max-width: 767px) and (min-height: 521px) {
+  .p1-pop .p1-pop__caption { margin: 2px 0 6px; }
+}
