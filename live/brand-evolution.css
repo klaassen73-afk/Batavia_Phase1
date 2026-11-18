@@ -183,3 +183,9 @@ header[data-elementor-type="header"] { position: relative; z-index: 10; }
 .be-page .be-hero .body-copy, .be-page .vip .body-copy { color: rgba(255,255,255,.92); }
 @media (max-width: 767px) { .be-page .body-copy { font-size: 17px; line-height: 26px; } }
 .be-page .why .body-copy { max-width: none; }
+
+/* Static bridge line under the morphing logo (client round 2, Nov 18) */
+.be-page .morph__caption { position: absolute; left: 0; right: 0; bottom: 4.5%; margin: 0; padding: 0 16px; text-align: center;
+  font: 400 13px/18px var(--font); letter-spacing: .01em; color: #939598; }
+@media (max-width: 767px) { .be-page .morph__caption { font-size: 12px; line-height: 16px; bottom: 3.5%; } }
+.be-page .vip .body-copy a { color: var(--white); text-decoration: underline; text-underline-offset: 3px; }

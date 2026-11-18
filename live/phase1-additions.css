@@ -19,5 +19,5 @@
 /* Logo swap: the new lockup is taller than the old BCI logo. On tablet/phone the live hero slides up exactly 163px
    under the header, so the logo is sized to keep the header that tall (still above the 120px digital minimum). */
 @media (max-width: 1024px) {
-  img[src*="horizontal-container-incorporated"] { width: 132px !important; min-width: 120px; max-width: none; height: auto !important; }
+  img[src*="horizontal-packaging-display-fullcolor"] { width: 132px !important; min-width: 120px; max-width: none; height: auto !important; }
 }

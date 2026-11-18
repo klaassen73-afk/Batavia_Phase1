@@ -136,9 +136,9 @@ body .gform_wrapper .gform_title {
 </style>
 	<link rel="stylesheet" href="https://use.typekit.net/hgt4prc.css">
 <link rel="icon" href="../assets/batavia-mark-fullcolor.svg" type="image/svg+xml">
-<link rel="stylesheet" href="phase1-additions.css?v=dd06f257">
-<link rel="stylesheet" href="brand-evolution.css?v=3c43fd57">
-<link rel="stylesheet" href="homepage-popup.css?v=1dbce761">
+<link rel="stylesheet" href="phase1-additions.css?v=d39ddfae">
+<link rel="stylesheet" href="brand-evolution.css?v=8650afeb">
+<link rel="stylesheet" href="homepage-popup.css?v=5eb5000c">
 </head>
 <body class="home wp-singular page-template page-template-elementor_header_footer page page-id-64 wp-theme-bci hide-recaptcha elementor-default elementor-template-full-width elementor-kit-898 elementor-page elementor-page-64">
 <a class="p1-announce" href="brand-evolution.html"><span class="p1-announce__inner"><img src="../assets/batavia-mark-white.svg" alt="" class="p1-announce__mark"><span class="p1-announce__long"><strong>We’re evolving…</strong> Explore our new brand identity while we build our new web experience.</span><span class="p1-announce__short"><strong>We’re evolving…</strong> See our new brand →</span><span class="p1-announce__cta">See what’s new →</span></span></a>
@@ -185,7 +185,7 @@ body .gform_wrapper .gform_title {
 						<div class="elementor-element elementor-element-87cbae7 elementor-widget-mobile__width-auto elementor-widget elementor-widget-image" data-id="87cbae7" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
 				<div class="elementor-widget-container">
 																<a href="/">
-							<img width="271" height="121" src="../assets/batavia-logo-horizontal-container-incorporated-fullcolor.svg" alt="Batavia Container Incorporated" style="width:220px;height:auto"/>								</a>
+							<img width="271" height="121" src="../assets/batavia-logo-horizontal-packaging-display-fullcolor.svg" alt="Batavia Packaging and Display" style="width:220px;height:auto"/>								</a>
 															</div>
 				</div>
 					</div>
@@ -510,7 +510,7 @@ Display</a></h2>				</div>
 						<div class="elementor-element elementor-element-6b7c349 elementor-widget elementor-widget-image" data-id="6b7c349" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
 				<div class="elementor-widget-container">
 																<a href="https://www.bataviacontainer.com/">
-							<img width="271" height="121" src="../assets/batavia-logo-horizontal-white.svg" alt="Batavia" style="width:240px;height:auto"/>								</a>
+							<img width="271" height="121" src="../assets/batavia-logo-horizontal-packaging-display-white.svg" alt="Batavia Packaging and Display" style="width:240px;height:auto"/>								</a>
 															</div>
 				</div>
 				<div class="elementor-element elementor-element-883c436 e-grid-align-mobile-center elementor-shape-rounded elementor-grid-0 e-grid-align-center elementor-widget elementor-widget-social-icons" data-id="883c436" data-element_type="widget" data-e-type="widget" data-widget_type="social-icons.default">
@@ -651,7 +651,7 @@ Display</a></h2>				</div>
 			<div class="elementor-widget-wrap elementor-element-populated">
 						<div class="elementor-element elementor-element-3ed9199a elementor-widget elementor-widget-heading" data-id="3ed9199a" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-					<p class="elementor-heading-title elementor-size-default">© 2022 Batavia Container Company</p>				</div>
+					<p class="elementor-heading-title elementor-size-default">©2026 Batavia Packaging and Display</p>				</div>
 				</div>
 					</div>
 		</div>
@@ -781,13 +781,12 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
         <div class="morph morph--video" id="popMorph">
           <video class="morph__video" muted playsinline preload="auto" aria-label="The BCI logo transforming into the new Batavia logo"
                  poster="../assets/morph/batavia-morph-stacked-start.png" data-layout="stacked"></video>
-          <button class="morph__replay" type="button">↻ Replay</button>
         </div>
     </div>
     <div class="p1-pop__body">
-      <p class="eyebrow">We’re evolving</p>
       <h2 id="p1PopTitle">Meet the new Batavia.</h2>
-      <p class="body-copy p1-pop__copy">Our look is changing, but our commitment to our clients remains the same. See what’s new, and get early access to our next digital experience.</p>
+      <p class="p1-pop__sub">Batavia Container is now Batavia Packaging and Display</p>
+      <p class="body-copy p1-pop__copy">Our name and look are evolving to match the company we’ve become. Backed by expanded capabilities, new turnkey services, and a clear vision for growth, we’re gearing up to launch a brand-new digital home. See what’s new, and get early access to our next digital experience coming soon in 2027.</p>
       <div class="p1-pop__ctas">
         <a class="btn btn--red" href="brand-evolution.html">Explore our new brand</a>
         <a class="btn btn--outline" href="brand-evolution.html#early-access">Get early access</a>
@@ -806,6 +805,7 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
     var v = m.querySelector('video');
     // ?still shows the finished logo (reduced motion, screenshots, the review index)
     var still = /[?&]still\b/.test(location.search) || (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    v.loop = !still;   // 1s old logo, morph, 5s new logo, then repeats (timing is baked into the video)
     function load() {
       var L = pickLayout ? pickLayout() : v.getAttribute('data-layout');
       if (v.getAttribute('data-loaded') === L) return;
@@ -816,7 +816,6 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
       v.load();
     }
     v.addEventListener('ended', function () { m.classList.add('is-done'); });
-    m.querySelector('.morph__replay').addEventListener('click', function () { play(); });
     function play() {
       load();
       m.classList.remove('is-done');

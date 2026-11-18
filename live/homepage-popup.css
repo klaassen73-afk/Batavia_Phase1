@@ -127,3 +127,9 @@ html.p1-pop-lock { overflow: hidden; }
 /* Body copy (Nov 15): desktop only, hidden in the slim phone sheet like the old placeholder */
 .p1-pop .p1-pop__copy { font-size: 17px; line-height: 26px; margin-bottom: 24px; }
 @media (max-width: 567px), (max-width: 767px) and (min-height: 521px) { .p1-pop .p1-pop__copy { display: none; } }
+
+/* Sub header (client round 2, Nov 18): shown on phones too, it carries the name change */
+.p1-pop .p1-pop__sub { margin: -4px 0 16px; font: 600 17px/24px var(--font); color: var(--red-1); }
+@media (max-width: 567px), (max-width: 767px) and (min-height: 521px) {
+  .p1-pop .p1-pop__sub { margin: -6px 0 14px; font-size: 15px; line-height: 20px; }
+}
